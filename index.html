@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="salesforce.html">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0f172a;
+  color:white;
+}
+
+/* Navbar */
+header{
+  position:fixed;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,23,42,0.9);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+header h2{
+  color:#38bdf8;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  transition:.3s;
+}
+nav a:hover{
+  color:#38bdf8;
+}
+
+/* Sections */
+section{
+  min-height:100vh;
+  padding:120px 8%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Hero Layout */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:50px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.hero-text h1{
+  font-size:55px;
+}
+
+.hero-text span{
+  color:#38bdf8;
+}
+
+.hero-text p{
+  margin-top:20px;
+  font-size:20px;
+  opacity:.8;
+}
+
+/* Profile Image */
+.profile-container{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.profile-pic{
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  border:5px solid #38bdf8;
+  animation:glow 3s infinite alternate;
+  transition:.4s;
+}
+
+.profile-pic img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.profile-pic:hover{
+  transform:scale(1.05);
+}
+
+@keyframes glow{
+  from{box-shadow:0 0 20px #38bdf8;}
+  to{box-shadow:0 0 40px #38bdf8;}
+}
+
+/* About Section */
+.about-container{
+  max-width:900px;
+  text-align:center;
+}
+
+.about-container h2{
+  font-size:40px;
+  margin-bottom:20px;
+  color:#38bdf8;
+}
+
+.about-container p{
+  font-size:18px;
+  line-height:1.7;
+  opacity:.85;
+}
+
+/* Projects */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.project-card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:12px;
+  transition:.3s;
+}
+.project-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(56,189,248,0.3);
+}
+
+/* Footer */
+footer{
+  background:#020617;
+  padding:40px 8%;
+}
+
+.footer-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.footer-box h3{
+  margin-bottom:15px;
+  color:#38bdf8;
+}
+
+.footer-box p,
+.footer-box a{
+  font-size:14px;
+  opacity:.8;
+  color:white;
+  text-decoration:none;
+  display:block;
+  margin-bottom:10px;
+  transition:.3s;
+}
+
+.footer-box a:hover{
+  color:#38bdf8;
+}
+
+.footer-box i{
+  margin-right:10px;
+  color:#38bdf8;
+}
+
+.copyright{
+  text-align:center;
+  margin-top:30px;
+  font-size:14px;
+  opacity:.6;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text h1{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>MyPortfolio</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="salesforce.html">webpage</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Hello, I'm <span id="name"></span></h1>
+    <p id="role"></p>
+  </div>
+
+  <div class="profile-container">
+    <div class="profile-pic">
+      <img id="profileImage" src="C:\Users\kalea\OneDrive\Desktop\my portfolio\shortimage.jpeg" >
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-container">
+    <h2>About Me</h2>
+    <p id="aboutText"></p>
+    <p><ul>
+      <li>I’m Aniket, a B.Tech student with a strong interest in web development and data analysis.</li><br>
+      <li>
+        I completed my 10th (SSC) with 86%, establishing a strong academic base.In my 12th (HSC), I achieved 74.17%, focusing on analytical and technical subjects. I further demonstrated my aptitude by securing a 96.14 percentile in MHT-CET.
+      </li><br>
+      <li>
+        Currently, I am pursuing a B.Tech degree, maintaining a CGPA of 8.1 out of 10, which reflects my consistent dedication and performance.
+      </li><br>
+       <li> I have a solid foundation in programming and problem-solving, with skills in Python, C, HTML, CSS, and javaScript.</li><br>
+       <li>
+        I enjoy building practical solutions using technology, and one of my key projects involves developing an AI-powered library management system.
+       </li><br>
+       <li>
+        I am particularly passionate about applying artificial intelligence to real-life problems and creating meaningful, efficient systems.
+       </li><br>
+       <li>
+        Curious and always eager to learn, I continuously explore new advancements in AI and technology to enhance my skills and stay ahead in this evolving field.
+       </li><br>
+        </ul>
+      </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div style="width:100%;">
+    <h2>Projects</h2>
+    <div class="projects" id="projectsContainer"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p><i class="fa-solid fa-envelope"></i><span id="email"></span></p>
+      <p><i class="fa-solid fa-phone"></i><span id="phone"></span></p>
+      <p><i class="fa-solid fa-location-dot"></i><span id="location"></span></p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Social</h3>
+      <a id="linkedinLink" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+      <a id="githubLink" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 <span id="footerName"></span>
+  </div>
+</footer>
+
+<script>
+
+/* ===== EDIT ONLY THIS ===== */
+
+const user = {
+  name: "Aniket Kale",
+  role: "Software Engineer",
+  // about: "Hello my name is aniket kale , i passed my 10th class in kai. Narsinghrao vidhyalay , Nalegaon and i get 86% in ssc exam. After that i got addmission in Dayanand science collage , latur and i passed my 12th class and i get 74.17% in hsc exam after that i apply to MHT-CET examination and i got 97.14 percentile.Then i got addmission in MIT collage of Engineering in pune. Now i am in first year and i completed my first semester with CGPA of 8.1 . And i also participate in geeks for geeks codex competion. I learn c language and html. Currently i am learning python basics to solve problems.",
+  image: "shortimage.jpeg",
+  email: "kaleaniket359@gmail.com",
+  phone: "+917756820601",
+  location: "Pune, Maharashtra",
+  linkedin: "https://linkedin.com/in/Aniket Kale",
+  github: "https://github.com/Aniket Kale",
+  
+  projects: [
+    
+    { title:"Car seat belt project", desc:"The Car Seat Belt Safety System is a project designed to improve safety in vehicles by ensuring that passengers wear their seat belts before the car starts moving. The system uses sensors to detect whether the seat belt is fastened or not.When a person sits in the car and the seat belt is not worn, the system gives a warning through a buzzer or alert light. Once the seat belt is properly fastened, the warning stops. This helps remind drivers and passengers to follow safety rules and reduces the risk of injury during accidents.The project demonstrates how simple electronic components and sensors can be used to create a safety feature similar to those used in modern cars. It focuses on improving passenger safety and promoting responsible driving habits." },
+
+
+
+
+    { title:"AI in library management system", desc:"The AI-based Library Management System is a smart application that helps libraries manage books, users, and daily operations more efficiently. Instead of handling records manually, the system stores all information digitally and uses artificial intelligence to make the process faster and easier.The system allows librarians to add, update, and manage book records, as well as track which books are issued or returned by users. AI helps improve the system by suggesting books to readers based on their interests and reading history. It can also analyze which books are popular so libraries can manage their collections better.Overall, this project reduces manual work for librarians, improves organization, and provides a better experience for library users by using AI to make the system more intelligent and user-friendly." }
+  ]
+};
+
+/* ===== DO NOT TOUCH BELOW ===== */
+
+document.getElementById("name").textContent=user.name;
+document.getElementById("role").textContent=user.role;
+document.getElementById("aboutText").textContent=user.about;
+document.getElementById("profileImage").src=user.image;
+document.getElementById("email").textContent=user.email;
+document.getElementById("phone").textContent=user.phone;
+document.getElementById("location").textContent=user.location;
+document.getElementById("footerName").textContent=user.name;
+document.getElementById("linkedinLink").href=user.linkedin;
+document.getElementById("githubLink").href=user.github;
+
+const container=document.getElementById("projectsContainer");
+user.projects.forEach(p=>{
+  const div=document.createElement("div");
+  div.className="project-card";
+  div.innerHTML=`<h3>${p.title}</h3>
+                 <p style="margin-top:10px;opacity:.8;">${p.desc}</p>`;
+  container.appendChild(div);
+});
+
+</script>
+
+</body>
+</html>
